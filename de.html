@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allgemeine Nutzungsbedingungen — Rook</title>
+  <meta name="description" content="Allgemeine Geschäfts- und Nutzungsbedingungen für die mobile Anwendung und Plattform Rook (it.rookapp.eventi) für Veranstaltungen, Sagre und Kultur in der Toskana.">
+  <meta name="theme-color" content="#c84b31">
+
+  <!-- Favicon SVG Identitaria Rook / Toscana -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23c84b31'/><path d='M10 8h12v4l-2 2v6h2v4H8v-4h2v-6l-2-2V8h2zm3 3v2h2v-2h-2zm4 0v2h2v-2h-2z' fill='white'/></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/termini/style.css">
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div id="readingProgress" class="reading-progress-bar" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <a href="#hero" class="brand-logo" aria-label="Home">
+          <span class="logo-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+          <div class="brand-text">
+            <span class="brand-name">Rook</span>
+            <span class="brand-tagline">Events & Traditionen in der Toskana</span>
+          </div>
+        </a>
+        <div class="header-badges">
+          <span class="badge badge-version">v1.2</span>
+          <span class="badge badge-date">09. November 2026</span>
+        </div>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Quick Search Box -->
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Klauseln suchen (z. B. Konto, Minderjährige, Allergene, Haftung)..." aria-label="Search">
+          <button id="clearSearchBtn" class="clear-search-btn" aria-label="Clear" hidden>&times;</button>
+          <span class="search-shortcut" title="Press / to search">/</span>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="langSwitcher">
+          <button id="langBtn" class="action-btn lang-btn" aria-haspopup="true" aria-expanded="false" title="Switch language">
+            <svg class="icon-globe" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span class="btn-text">DE</span>
+            <svg class="icon-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="langDropdown" role="menu">
+            <a href="index.html" class="lang-dropdown-item" data-lang="it" role="menuitem">
+              <span class="flag">🇮🇹</span>
+              <span class="label">Italiano</span>
+              <span class="check">✓</span>
+            </a>
+            <a href="en.html" class="lang-dropdown-item" data-lang="en" role="menuitem">
+              <span class="flag">🇬🇧</span>
+              <span class="label">English</span>
+              <span class="check">✓</span>
+            </a>
+            <a href="#" class="lang-dropdown-item active" data-lang="de" role="menuitem">
+              <span class="flag">🇩🇪</span>
+              <span class="label">Deutsch</span>
+              <span class="check">✓</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Light/Dark Theme Switcher -->
+        <button id="themeToggle" class="action-btn theme-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile TOC Toggle -->
+        <button id="mobileTocToggle" class="action-btn mobile-toc-btn" aria-label="Toggle contents index">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <span class="btn-text">TOC</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Results Counter -->
+  <div id="searchStatusBar" class="search-status-bar" hidden>
+    <div class="search-status-inner">
+      <span id="searchResultCount">0 matches found</span>
+      <div class="search-nav-controls">
+        <button id="prevMatchBtn" title="Previous (Shift+Enter)">&uarr;</button>
+        <button id="nextMatchBtn" title="Next (Enter)">&darr;</button>
+        <button id="closeSearchAlertBtn" class="close-search">&times;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-wrapper">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Offizielles Rechtsdokument
+        </div>
+        <h1 class="hero-title">Allgemeine Geschäfts- und Nutzungsbedingungen</h1>
+        <p class="hero-subtitle">
+          Vertragsbedingungen und Nutzungsregeln für die Plattform und mobile Anwendung <strong>Rook</strong> (Application ID: <code>it.rookapp.eventi</code>, ehemals entwickelt als <em>CosaFare</em>) für Veranstaltungen, Sagre und Feste in der Toskana.
+        </p>
+
+        <!-- Metadata Strip -->
+        <div class="meta-strip">
+          <div class="meta-item">
+            <span class="meta-label">Letzte Aktualisierung</span>
+            <span class="meta-value">09. November 2026</span>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-item">
+            <span class="meta-label">Version</span>
+            <span class="meta-value">v1.2</span>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-item">
+            <span class="meta-label">Betreiber / Entwicklung</span>
+            <span class="meta-value">Project Rook (formerly CosaFare) &bull; TFDLab</span>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-item">
+            <span class="meta-label">Lesezeit</span>
+            <span class="meta-value" id="readTimeEstimate">~8 Minuten</span>
+          </div>
+        </div>
+
+        <!-- Key Points Cards Grid -->
+        <div class="key-points-grid">
+          <div class="point-card">
+            <div class="point-icon">🧭</div>
+            <div class="point-body">
+              <h3>Informationsführer</h3>
+              <p>Aggregator und umfassender Guide für toskanische Events: Sagre, traditionelle Feste und Kultur in allen 10 Provinzen.</p>
+            </div>
+          </div>
+          <div class="point-card">
+            <div class="point-icon">🔑</div>
+            <div class="point-body">
+              <h3>Google, E-Mail & Gast</h3>
+              <p>Surfen Sie anonym im Gastmodus oder melden Sie sich über Google bzw. E-Mail/Passwort an, um Favoriten zu synchronisieren.</p>
+            </div>
+          </div>
+          <div class="point-card">
+            <div class="point-icon">🛡️</div>
+            <div class="point-body">
+              <h3>Recht auf Löschung (DSGVO)</h3>
+              <p>Sofortige, eigenständige Löschung Ihres Kontos und aller personenbezogenen Daten direkt in den App-Einstellungen.</p>
+            </div>
+          </div>
+          <div class="point-card">
+            <div class="point-icon">📍</div>
+            <div class="point-body">
+              <h3>Region & Karten</h3>
+              <p>Integration des Google Maps SDK und Entfernungsberechnungen zur einfachen Navigation zu Veranstaltungsorten.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two-column Layout: TOC Sidebar + Document Content -->
+    <div class="content-layout">
+      <!-- Sidebar TOC -->
+      <aside class="sidebar-wrapper" id="sidebarWrapper">
+        <div class="sidebar-sticky">
+          <div class="sidebar-header">
+            <h2 class="sidebar-title">Inhaltsverzeichnis</h2>
+            <span class="toc-counter">15 Abschnitte</span>
+          </div>
+
+          <nav class="toc-nav" id="tocNav" aria-label="TOC">
+            <ol class="toc-list">
+              <li><a href="#sec-1" class="toc-link"><span class="toc-num">01</span> Plattformbetreiber und Präambel</a></li>
+              <li><a href="#sec-2" class="toc-link"><span class="toc-num">02</span> Definitionen</a></li>
+              <li><a href="#sec-3" class="toc-link"><span class="toc-num">03</span> Anwendungsbereich</a></li>
+              <li><a href="#sec-4" class="toc-link"><span class="toc-num">04</span> Annahme der Nutzungsbedingungen</a></li>
+              <li><a href="#sec-5" class="toc-link"><span class="toc-num">05</span> Altersanforderungen und Geschäftsfähigkeit</a></li>
+              <li><a href="#sec-6" class="toc-link"><span class="toc-num">06</span> Registrierung, Google Sign-In & Sicherheit</a></li>
+              <li><a href="#sec-7" class="toc-link"><span class="toc-num">07</span> Beschreibung der von Rook angebotenen Dienste</a></li>
+              <li><a href="#sec-8" class="toc-link"><span class="toc-num">08</span> Nutzerpflichten, Verhaltensregeln & Verbote</a></li>
+              <li><a href="#sec-9" class="toc-link"><span class="toc-num">09</span> Regeln für Veranstalter, Staff & Partnerschaften</a></li>
+              <li><a href="#sec-10" class="toc-link"><span class="toc-num">10</span> Geistiges Eigentum und Inhalte-Lizenz</a></li>
+              <li><a href="#sec-11" class="toc-link"><span class="toc-num">11</span> Haftungsausschluss und Haftungsbeschränkung</a></li>
+              <li><a href="#sec-12" class="toc-link"><span class="toc-num">12</span> Aussetzung von Diensten und Kontolöschung</a></li>
+              <li><a href="#sec-13" class="toc-link"><span class="toc-num">13</span> Änderungen der Nutzungsbedingungen</a></li>
+              <li><a href="#sec-14" class="toc-link"><span class="toc-num">14</span> Anwendbares Recht und Gerichtsstand</a></li>
+              <li><a href="#sec-15" class="toc-link"><span class="toc-num">15</span> Kontakt und Meldestelle</a></li>
+            </ol>
+          </nav>
+
+          <!-- Sidebar Help Card -->
+          <div class="sidebar-help-card">
+            <h4>Rechtliche Fragen?</h4>
+            <p>Kontaktieren Sie den Entwickler direkt für Unterstützung oder rechtliche Auskünfte.</p>
+            <a href="mailto:tfdlab.info@gmail.com" class="sidebar-contact-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>tfdlab.info@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Legal Document Content -->
+      <main class="legal-document" id="legalDocument">
+
+        <!-- ========================================== -->
+        <!-- SECTION 1 -->
+        <!-- ========================================== -->
+        <article id="sec-1" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">01</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">1. Plattformbetreiber und Präambel</h2>
+              <button class="copy-anchor-btn" data-target="sec-1" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Dieses Dokument (nachfolgend <strong>„Nutzungsbedingungen“</strong> oder <strong>„AGB“</strong>) regelt den Zugang, die Nutzung und die Abfrage der mobilen App <strong>„Rook“</strong> (Application ID <code>it.rookapp.eventi</code>, ehemals <em>„CosaFare“</em>), zugehöriger Webservices und Moderationssysteme (zusammen die <strong>„Plattform“</strong> oder die <strong>„Dienste“</strong>).</p>
+
+            <div class="operator-card">
+              <div class="operator-badge">Angaben zum Betreiber</div>
+              <ul class="operator-details">
+                <li>
+                  <span class="detail-label">Inhaber / Betreiber:</span>
+                  <span class="detail-value">Projekt Rook (ehemals CosaFare – nachfolgend der „Betreiber“)</span>
+                </li>
+                <li>
+                  <span class="detail-label">Entwickler / Technische Leitung:</span>
+                  <span class="detail-value">TFDLab</span>
+                </li>
+                <li>
+                  <span class="detail-label">Kontakt- und Support-E-Mail:</span>
+                  <span class="detail-value"><a href="mailto:tfdlab.info@gmail.com" class="link-styled">tfdlab.info@gmail.com</a></span>
+                </li>
+                <li>
+                  <span class="detail-label">Geografischer Schwerpunkt:</span>
+                  <span class="detail-value">Region Toskana, Italien</span>
+                </li>
+                <li>
+                  <span class="detail-label">Standort / Anschrift:</span>
+                  <span class="detail-value">Cascina, Pisa, Italien</span>
+                </li>
+              </ul>
+            </div>
+
+            <p>Diese Bedingungen regeln die Rechte und Pflichten aller Nutzer der Plattform. Bitte lesen Sie diesen Text vor der Nutzung der App sorgfältig durch.</p>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 2 -->
+        <!-- ========================================== -->
+        <article id="sec-2" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">02</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">2. Definitionen</h2>
+              <button class="copy-anchor-btn" data-target="sec-2" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Für die Auslegung dieser Nutzungsbedingungen gelten die folgenden Begriffsbestimmungen:</p>
+
+            <div class="definitions-grid">
+              <div class="definition-card">
+                <h3 class="def-term">«App» oder «Rook»</h3>
+                <p class="def-desc">Die mobile Software-App für Android und unterstützte Betriebssysteme mit dem Titel <strong>„Rook – Events in der Toskana“</strong> (ehemals <em>„CosaFare“</em>), einschließlich Benutzeroberflächen, Code, Datenbanken und Inhalten.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Betreiber»</h3>
+                <p class="def-desc">Die für Entwicklung und Betrieb der App verantwortliche Stelle gemäß Artikel 1.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Nutzer»</h3>
+                <p class="def-desc">Jede natürliche oder juristische Person, die die App nutzt, einschließlich Gästen, registrierten Nutzern und Veranstaltern.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Gast» (oder «Besucher»)</h3>
+                <p class="def-desc">Ein Nutzer, der die App anonym im Gastmodus ohne Kundenkonto nutzt.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Registrierter Nutzer»</h3>
+                <p class="def-desc">Ein Nutzer, der sich über Google Sign-In oder E-Mail/Passwort angemeldet hat, um erweiterte Funktionen zu nutzen.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Veranstalter»</h3>
+                <p class="def-desc">Jede Körperschaft, jeder Verein, jedes Pro-Loco-Komitee oder jede Person, die Veranstaltungen auf der Plattform einstellt.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Veranstaltung» (oder «Event»)</h3>
+                <p class="def-desc">Jedes Dorffest (Sagra), Kulturfest, Konzert, jeder Markt oder jede Ausstellung in der Toskana.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Veranstaltungsinhalte»</h3>
+                <p class="def-desc">Sämtliche Eventdaten wie Titel, Beschreibungen, Termine, Flyer, Fotos, Speisekarten, Preise und Koordinaten.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Verbraucher»</h3>
+                <p class="def-desc">Eine natürliche Person, die die Dienste zu Zwecken nutzt, die nicht ihrer gewerblichen oder selbstständigen Tätigkeit zugerechnet werden können.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Staff» / «Mitarbeiter»</h3>
+                <p class="def-desc">Eine von einem Veranstalter durch einen Berechtigungscode autorisierte Person zur Verwaltung von Events und Chats.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Kooperation»</h3>
+                <p class="def-desc">Eine partnerschaftliche Vereinbarung zwischen zwei oder mehr Veranstaltern innerhalb der App zur gemeinsamen Durchführung von Events.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Meldung»</h3>
+                <p class="def-desc">Eine formelle Mitteilung eines Nutzers über fehlerhafte, ausgefallene oder rechtswidrige Inhalte eines Events.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">«Badges und Reputation»</h3>
+                <p class="def-desc">Vertrauensindikatoren für Veranstalter auf Basis von Verlässlichkeit, Schnelligkeit und Transparenz.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 3 -->
+        <!-- ========================================== -->
+        <article id="sec-3" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">03</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">3. Anwendungsbereich</h2>
+              <button class="copy-anchor-btn" data-target="sec-3" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Diese Bedingungen gelten für alle über Rook bereitgestellten Dienste und binden gleichermaßen:</p>
+            <div class="scope-cards-list">
+              <div class="scope-item">
+                <span class="scope-badge">1</span>
+                <div>
+                  <strong>Besucher im 'Gast'-Modus</strong>
+                  <p>Personen, die die App unverbindlich und anonym zum Durchstöbern von Events nutzen.</p>
+                </div>
+              </div>
+              <div class="scope-item">
+                <span class="scope-badge">2</span>
+                <div>
+                  <strong>Registrierte Nutzer</strong>
+                  <p>Nutzer, die ihr Profil über Google oder E-Mail anbinden, um Favoriten zu synchronisieren und Benachrichtigungen zu erhalten.</p>
+                </div>
+              </div>
+              <div class="scope-item">
+                <span class="scope-badge">3</span>
+                <div>
+                  <strong>Veranstalter von Events</strong>
+                  <p>Akteure, die Veranstaltungsdaten, Speisekarten und Programmpunkte veröffentlichen.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="callout callout-info" style="margin-top: 20px;">
+              <div class="callout-icon">ℹ️</div>
+              <div class="callout-content">
+                Zusatzdienste und Einzelverträge: Besondere Vereinbarungen mit Veranstaltern können diese Nutzungsbedingungen ergänzen oder im Fall ausdrücklicher Abweichungen vorgehen.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 4 -->
+        <!-- ========================================== -->
+        <article id="sec-4" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">04</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">4. Annahme der Nutzungsbedingungen</h2>
+              <button class="copy-anchor-btn" data-target="sec-4" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Durch das Herunterladen, Installieren oder Nutzen der App erklärt der Nutzer, diese Bedingungen sowie die Datenschutzerklärung gelesen und uneingeschränkt akzeptiert zu haben.</p>
+            <p>Ist der Nutzer mit einzelnen Klauseln nicht einverstanden, hat er die Nutzung unverzüglich einzustellen und die App zu löschen.</p>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 5 -->
+        <!-- ========================================== -->
+        <article id="sec-5" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">05</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">5. Altersanforderungen und Geschäftsfähigkeit</h2>
+              <button class="copy-anchor-btn" data-target="sec-5" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Die Nutzung der App ist Personen ab <strong>14 Jahren</strong> gestattet. Mit der Nutzung versichert der Nutzer, dieses Mindestalter erreicht zu haben.</p>
+            <p>Bei Minderjährigen unter 18 Jahren wird das Einverständnis der Erziehungsberechtigten vorausgesetzt.</p>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 6 -->
+        <!-- ========================================== -->
+        <article id="sec-6" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">06</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">6. Registrierung, Google Sign-In & Sicherheit</h2>
+              <button class="copy-anchor-btn" data-target="sec-6" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Rook kann ohne Registrierung als Gast genutzt werden. Für Favoritensynchronisierung, In-App-Chat, Rezensionen und Stichwort-Alerts ist die Anmeldung via Google Sign-In oder E-Mail/Passwort erforderlich.</p>
+            <p>Der Nutzer ist für die vertrauliche Behandlung seiner Zugangsdaten verantwortlich. Verdächtige Aktivitäten sind unverzüglich an <a href='mailto:tfdlab.info@gmail.com' class='link-styled'>tfdlab.info@gmail.com</a> zu melden.</p>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 7 -->
+        <!-- ========================================== -->
+        <article id="sec-7" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">07</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">7. Beschreibung der von Rook angebotenen Dienste</h2>
+              <button class="copy-anchor-btn" data-target="sec-7" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Rook stellt eine Informations- und Vermittlungsplattform für toskanische Feste und Kulturveranstaltungen bereit:</p>
+
+            <div class="definitions-grid">
+              <div class="definition-card">
+                <h3 class="def-term">Event-Katalog & Suche</h3>
+                <p class="def-desc">Durchsuchen, Filtern und Entdecken von Dorffesten (Sagre), Konzerten und Traditionen in allen 10 Provinzen der Toskana.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">Interaktive Karte & Navigation</h3>
+                <p class="def-desc">Visualisierung auf Kartenbasis via Google Maps SDK mit Echtzeit-Entfernungsberechnung zum Veranstaltungsort.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">Favoriten & Stichwort-Alerts</h3>
+                <p class="def-desc">Speichern von Lieblingsevents, Abonnieren von Veranstaltern und Einrichten automatischer Push-Benachrichtigungen.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">Bewertungen & Rezensionen</h3>
+                <p class="def-desc">Verfassen von Erfahrungsberichten und Sternenbewertungen mit jederzeitiger Lösch- und Änderungsfunktion.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">In-App-Direktchat</h3>
+                <p class="def-desc">Direkte Kontaktaufnahme mit Veranstaltern für Rückfragen zu Programmen, Barrierefreiheit oder Speiseangeboten.</p>
+              </div>
+              <div class="definition-card">
+                <h3 class="def-term">Veranstalter-Tools & Booster</h3>
+                <p class="def-desc">Dedizierte Funktionen für verifizierte Veranstalter zur Eventverwaltung, Teamkoordination und Hervorhebung.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 8 -->
+        <!-- ========================================== -->
+        <article id="sec-8" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">08</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">8. Nutzerpflichten, Verhaltensregeln & Verbote</h2>
+              <button class="copy-anchor-btn" data-target="sec-8" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Nutzer verpflichten sich zur rechtmäßigen Nutzung. Ausdrücklich untersagt sind:</p>
+            <ul class="styled-list">
+              <li>Das Einstellen beleidigender, diskriminierender, falscher oder jugendgefährdender Inhalte;</li><li>Der Einsatz automatisierter Scraping-Software, Bots oder Crawler zum Auslesen der Datenbank;</li><li>Die unbefugte Identitätstäuschung oder Ausgabe als Vertreter von Behörden oder Rook;</li><li>Angriffe auf die IT-Sicherheit oder die Firebase-Infrastruktur;</li><li>Das Versenden von Spam oder unautorisierter kommerzieller Werbung.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 9 -->
+        <!-- ========================================== -->
+        <article id="sec-9" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">09</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">9. Regeln für Veranstalter, Staff & Partnerschaften</h2>
+              <button class="copy-anchor-btn" data-target="sec-9" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Veranstalter sichern zu, dass alle veröffentlichten Angaben (Zeiten, Orte, Eintrittspreise, Allergenhinweise) wahrheitsgemäß und aktuell sind.</p>
+            <p>Bei Ausfall, Verschiebung oder wesentlicher Änderung eines Events ist der Veranstalter verpflichtet, den Status unverzüglich in der App anzupassen.</p>
+            <p>Rook behält sich vor, unzulässige oder irreführende Einträge ohne Vorankündigung zu sperren oder zu entfernen.</p>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 10 -->
+        <!-- ========================================== -->
+        <article id="sec-10" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">10</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">10. Geistiges Eigentum und Inhalte-Lizenz</h2>
+              <button class="copy-anchor-btn" data-target="sec-10" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Sämtliche Marken, Logos, Designs, Quellcodes und Datenbankstrukturen von Rook stehen im ausschließlichen Eigentum von TFDLab.</p>
+            <p>Mit dem Hochladen von Eventmaterialien oder Rezensionen räumt der Nutzer Rook eine unentgeltliche, weltweite Lizenz zur Darstellung innerhalb der App ein.</p>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 11 -->
+        <!-- ========================================== -->
+        <article id="sec-11" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">11</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">11. Haftungsausschluss und Haftungsbeschränkung</h2>
+              <button class="copy-anchor-btn" data-target="sec-11" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p><strong>Rook agiert rein als Informationsvermittler und Aggregator.</strong> Rook ist weder Veranstalter noch Ticketverkäufer der aufgeführten Events.</p>
+            <p>Der Betreiber haftet nicht für Eventausfälle, Terminverschiebungen, unzutreffende Veranstalterangaben, Speisenqualität oder Schäden aus dem Besuch von Events.</p>
+            <p>Trotz sorgfältiger Prüfung wird Nutzern empfohlen, kurzfristige Änderungen vor Reiseantritt direkt beim Veranstalter zu prüfen.</p>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 12 -->
+        <!-- ========================================== -->
+        <article id="sec-12" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">12</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">12. Aussetzung von Diensten und Kontolöschung</h2>
+              <button class="copy-anchor-btn" data-target="sec-12" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Bei schwerwiegenden Verstößen gegen diese AGB behält sich der Betreiber die vorübergehende Sperrung oder dauerhafte Kündigung des Kontos vor.</p>
+            <p><strong>Recht auf Kontolöschung in der App:</strong> Jeder Nutzer kann sein Konto jederzeit eigenständig in der App löschen (Profil &rarr; Konto löschen) oder per E-Mail an <a href='mailto:tfdlab.info@gmail.com' class='link-styled'>tfdlab.info@gmail.com</a> beantragen.</p>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 13 -->
+        <!-- ========================================== -->
+        <article id="sec-13" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">13</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">13. Änderungen der Nutzungsbedingungen</h2>
+              <button class="copy-anchor-btn" data-target="sec-13" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Der Betreiber kann diese AGB bei rechtlichen Änderungen oder funktionellen Erweiterungen der App anpassen.</p>
+            <p>Die fortgesetzte Nutzung der App nach Veröffentlichung aktualisierter Bedingungen gilt als Zustimmung.</p>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 14 -->
+        <!-- ========================================== -->
+        <article id="sec-14" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">14</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">14. Anwendbares Recht und Gerichtsstand</h2>
+              <button class="copy-anchor-btn" data-target="sec-14" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Es gilt das Recht der Italienischen Republik unter Ausschluss des UN-Kaufrechts.</p>
+            <p>Für Verbraucher gilt der gesetzliche Gerichtsstand ihres Wohnsitzes. In allen anderen Fällen ist Pisa (Italien) ausschließlicher Gerichtsstand.</p>
+          </div>
+        </article>
+
+        <!-- ========================================== -->
+        <!-- SECTION 15 -->
+        <!-- ========================================== -->
+        <article id="sec-15" class="legal-section">
+          <header class="section-header">
+            <span class="section-tag">15</span>
+            <div class="title-with-anchor">
+              <h2 class="section-title">15. Kontakt und Meldestelle</h2>
+              <button class="copy-anchor-btn" data-target="sec-15" title="Copy link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="section-content">
+            <p>Für Mitteilungen, Beanstandungen oder rechtliche Anfragen wenden Sie sich an:</p>
+
+            <div class="contact-channels-grid">
+              <div class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <h4>E-Mail-Support</h4>
+                <p>Offizieller Kanal für rechtliche Anfragen.</p>
+                <a href='mailto:tfdlab.info@gmail.com' class='contact-action-link'>tfdlab.info@gmail.com</a>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h4>Standort</h4>
+                <p>Anschrift für förmliche Korrespondenz.</p>
+                <address class='contact-address'>Cascina, Pisa, Italien</address>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon">📱</div>
+                <h4>In-App-Meldung</h4>
+                <p>Fehlerhafte Events direkt in der App melden.</p>
+                <span class='contact-inapp'>Event-Details &rarr; Event melden</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Document Closure -->
+        <div class="doc-closure">
+          <div class="closure-badge">Ende des Dokuments</div>
+          <p class="closure-text">
+            Diese Nutzungsbedingungen stellen die vollständige Vereinbarung zwischen dem Nutzer und dem Betreiber von Rook für die Nutzung der App dar.
+          </p>
+          <div class="closure-actions">
+            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn-secondary">
+              &uarr; Nach oben
+            </button>
+            <div class="closure-lang-group" aria-label="Language selector">
+              <span class="closure-lang-label">Sprache:</span>
+              <a href="index.html" class="closure-lang-btn" data-lang="it">🇮🇹 IT</a>
+              <a href="en.html" class="closure-lang-btn" data-lang="en">🇬🇧 EN</a>
+              <a href="#" class="closure-lang-btn active" data-lang="de">🇩🇪 DE</a>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast-toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span id="toastMessage">Abschnittslink in die Zwischenablage kopiert!</span>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top" title="Top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">Rook</span>
+        <p class="footer-desc">
+          Die App für Feste, traditionelle Feierlichkeiten und Kultur in der Region Toskana.
+        </p>
+      </div>
+      <div class="footer-links">
+        <span class="footer-title">Schnellübersicht</span>
+        <ul>
+          <li><a href="#sec-1">Betreiber & Präambel</a></li>
+          <li><a href="#sec-4">Annahme der AGB</a></li>
+          <li><a href="#sec-6">Google Sign-In</a></li>
+          <li><a href="#sec-12">DSGVO & Kontolöschung</a></li>
+          <li><a href="#sec-15">Support & Kontakt</a></li>
+          <li><a href="/privacy/de">Datenschutzerklärung &rarr;</a></li>
+        </ul>
+      </div>
+      <div class="footer-meta">
+        <span class="footer-title">Rechtliche Informationen</span>
+        <p>&copy; 2026 Rook &bull; Entwickelt von TFDLab</p>
+        <p>Alle Rechte vorbehalten &bull; Cascina (PI), Italien</p>
+        <p class="footer-note">Mobile App verfügbar für Android und unterstützte Plattformen.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/termini/script.js"></script>
+</body>
+</html>
